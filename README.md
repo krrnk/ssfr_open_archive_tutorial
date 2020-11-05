@@ -57,9 +57,9 @@ The IEM Plug-in Suite also offers many spatial tools such as encoders, decoders,
 
 The IEM suit has a fantastic [documentation](https://plugins.iem.at/docs/) with installation guides, detailed plug-in descriptions, a reaper tutorial, an specific guide for some of their spatial tools. 
 
-## Download
+#### Download
 Download your system version of IEM Plug-in Suite [here](https://plugins.iem.at/download/).
-## Installation
+#### Installation
 The IEM team has its own [installation guide](https://plugins.iem.at/docs/installation/) for Reaper.
 
 ## References
