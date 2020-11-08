@@ -62,5 +62,31 @@ Download your system version of IEM Plug-in Suite [here](https://plugins.iem.at/
 #### Installation
 The IEM team has its own [installation guide](https://plugins.iem.at/docs/installation/) for Reaper.
 
+## Project file
+### Download
+Download the reaper project as .zip from [here](https://github.com/krrnk/ssfr_open_archive_tutorial/archive/main.zip) or by cloning this repository:
+
+`git clone https://github.com/krrnk/ssfr_open_archive_tutorial.git`
+
+### Loading
+Locate the project file on your computer and double click on it to open it.
+
+### Navegation
+## Locating the plugins
+To be described...
+
+## Audio tracks
+The project counts with 14 tracks.
+
+The first track is the A-Format recordings track.
+
+The second track is the Ambisonic Master track. **This is the only track with hardware outputs.** This track is also the parent of all the other ambisonic tracks.
+
+The third track is the FX track and the enconder from A-Format to B-Format.
+
+The following tracks are all decoders from binaural (track 4) and stereo (track 5) to 1st Order (track 6) until 7th Order (track 14).
+
+
+
 ## References
 [1]: http://research.spa.aalto.fi/projects/sparta_vsts/
