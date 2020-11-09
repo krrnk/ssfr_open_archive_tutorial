@@ -3,15 +3,9 @@ INSERT DESCRIPTION
 
 ## Content
 1. DAW - Reaper 
-    1. Download
-    2. Installation
 2. VST Plug-Ins
     1. Aalto SPARTA
-       1. Download
-       2. Installation
     2. IEM Ambisonic Plug-in Suite
-       1. Download
-       2. Installation
 3. Project file
     1. Download
     2. Loading
@@ -31,10 +25,10 @@ I use Reaper because it offers a really easy configuration of multichannel track
 * Possibility to edit JSFX plug-ins with multichannel inputs and outputs.
 
 Although Reaper is not open-source, it offers a 60$ full-feature licence for individuals, educational and non-profit organizations. Its evaluation license is also full-feature, lasts 60 days and it will let use the software after those 60 days if you are ok with a little reminder to buy a license. 
-### Download
+
+**Download**
+
 Reaper works on MacOs, Windows and Linux. You can download the your system version [here](https://www.reaper.fm/download.php).
-### Installation
-To install Reaper, double click on the file you just download and follow the instructions on the screen. 
 
 ## VST Plug-ins
 There are different ambisonic plug-ins out there. However, I have found that the ones I get the best configurations and sound from are the Aalto SPARTA VST and the IEM Ambisonic Plug-in Suite. Both of them are open-source and offer support for MacOs, Windows and Linux. 
@@ -46,20 +40,19 @@ A full list and description of each plug-in can be found [here](http://research.
 
 I especially like the sparta_ambiDEC decoder. It offers different degrees of decoding order per frequency band and it provides real-time binaural listening of your multichannel speaker set-up. This decoder also come with numerous speaker layouts presets. 
 
-#### Download
+**Download**
+
 Download your system version of SPARTA [here](http://research.spa.aalto.fi/projects/sparta_vsts/).
-#### Installation
-In MacOS and Windows, unzip the file you just downloaded, double click the binary file and follow the installation instructions.
-In Linux, unzip the downloaded file, open the INSTALL INSTRUCTIONS file with your text editor of choice and follow the installation instructions. 
 
 ### IEM Ambisonic Plug-in Suite
 The IEM Plug-in Suite also offers many spatial tools such as encoders, decoders, rotators and visualisers among others. Withal, what I like about this suite are its audio editing tools such as a multichannel equaliser, ambisonic compressors and ambisonic delay and reverb. 
 
 The IEM suit has a fantastic [documentation](https://plugins.iem.at/docs/) with installation guides, detailed plug-in descriptions, a reaper tutorial, an specific guide for some of their spatial tools. 
 
-#### Download
+**Download**
+
 Download your system version of IEM Plug-in Suite [here](https://plugins.iem.at/download/).
-#### Installation
+
 The IEM team has its own [installation guide](https://plugins.iem.at/docs/installation/) for Reaper.
 
 ## Project file
@@ -72,21 +65,91 @@ Download the reaper project as .zip from [here](https://github.com/krrnk/ssfr_op
 Locate the project file on your computer and double click on it to open it.
 
 ### Navegation
+## General view
+Once the project have loaded you should have a general vier like this:
+
+![picture alt](http://via.placeholder.com/200x150 "Reaper General View")
+
 ## Locating the plugins
 To be described...
 
 ## Audio tracks
 The project counts with 14 tracks.
+* Track 1: A-Format recordings track.
+* Track 2: Ambisonic Master track. **This is the only track with hardware outputs.** This track is also the parent of all the other ambisonic tracks.
+* Track 3: FX track and the enconder from A-Format to B-Format.
+* Tracks 4 - 14: These tracks are all decoders from binaural (track 4) and stereo (track 5) to 1st Order (track 6) until 7th Order (track 14).
 
-The first track is the A-Format recordings track.
+## Project's Audio Routing
+A-Format -> FX & Encoder Track -> Decoders -> Ambisonic Master -> Hardware Outputs 
 
-The second track is the Ambisonic Master track. **This is the only track with hardware outputs.** This track is also the parent of all the other ambisonic tracks.
+## Adding an A-Format recording
+You can explore the the A-Format recordings of the Spatial Sound Field Recording Open Archive [here](https://archive.org/details/spatial-sound-open-archive-a-format/). The recordings are in .WAV 16-Bit/44.1 KHz.
 
-The third track is the FX track and the enconder from A-Format to B-Format.
+You can [download all the files](https://archive.org/compress/spatial-sound-open-archive-a-format/formats=WAVE,ITEM%20TILE,ARCHIVE%20BITTORRENT,METADATA) or download just one by clicking on DOWNLOAD OPTIONS/WAVE and pressing the download icon of the file you want. 
 
-The following tracks are all decoders from binaural (track 4) and stereo (track 5) to 1st Order (track 6) until 7th Order (track 14).
+Once you have the A-Format recording you want to work on, drag it in to the A-Format track in the Reaper project. 
+
+Now your project should look similar to this:
+
+![picture alt](http://via.placeholder.com/200x150 "Project with A-Format Recording")
+
+If you press <kbd>↩</kbd> you should already hear a binaural render of the A-Format recording as it is the only active decoding track.
+
+When I edit, I barely touch the A-Format track apart from cutting, normalising or triming the Pre-FX Volume. 
+
+Some shortcuts that are useful:
+* Split: <kbd>s</kbd>
+* Split within time selection: <kbd>⇧S</kbd>
+* Cut within time selection: <kbd>⌃⇧X</kbd> / 
+<kbd>⌘⇧X</kbd>
+* Normalize: <kbd>⌃⇧N</kbd> / 
+<kbd>⌘⇧N</kbd> 
+* Item properties: <kbd>F2</kbd> 
+
+## The Ambisonic Master
+This track is parent to the following FX and decoding tracks. 
+
+### Routing
+All the decoders have the <kbd>parent send</kbd> active. Consenquently, they route their output to the Ambisonic Master track. 
+
+The hardware outputs in this track are set to 64ch. You can check this by clicking on the <kbd>Route</kbd> button and looking for Audio Hardware Outputs.
+
+In my case, I only use this track for monitoring, output and rendering. 
+
+## The FX & A-B Encoder track 
+This track contains the effect chain and a encoder from A-Format to B-Format. 
+
+The FX chain in this track follows this path:
+Frequency Spectrum Analyzer -> Multichannel EQ -> Frequency Spectrum Analyzer -> Ambisonic Encoder A-B (AmbiX) -> (Bypassed) Ambisonic OmniCompressor -> (Bypassed) Ambisonic MultiBandCompressor -> (Bypassed) Ambisonic Energy Visualizer.
+
+### Why this order?
+> "Spatial information is encoded in balance and phase relations between the four channels of a B-format signal. Processing one or more of the B-format channels using an audio effect which modifies gain and phase relations will most likely disrupt or otherwise distort the encoded spatial information." [2] 
+
+Therefore, if we work with non-ambisonic plugins, these should be placed before the encoder. In this case, the Frequency Spectrum Analyzer and the Multichannel EQ are normal audio plug-ins so they go beofre encoding the signal. In contrast, the IEM compressors and visualizer expect an ambisonic signal as input and thus they are place after the encoder. 
+
+### Why these effects?
+
+I tend to avoid heavy editing of sound field recordings. For this reason, in this template I provide basic editing tools and it is up to the user to add more.
+
+Since the multichannel EQ does not offer graphical output, I place A 4ch frequency spectrum analyzer before and after the Multichannel EQ to double-check my changes.
+
+I leave the compressors bypassed as they are not always needed. I tend to use of them only and if necessary I use the Omnicompressor and Multiband compressor simultaneously. Notice that the IEM Plug-in Suite also offers an Ambisonic Directional Compressor. 
+
+The Visualzer is bypassed by default to save CPU power. 
+
+### B-Format encoding
+There are different encoding conventions for Ambisonics. These encoding conventions refere to the channel ordering of the B-Format signal and the normalization function applied to the signal. Both the SPARTA and IEM suite used the ACN ordering SN3D normalisation by default, which are standard when working with High Order Ambisonics [3]. C. Nachbar et al. offered a comparision between FUMA and ACN when they proposed the encoding format AmbiX [4].
+## The G-Format decoding tracks
 
 
 
 ## References
+
 [1]: http://research.spa.aalto.fi/projects/sparta_vsts/
+
+[2]: Lossius, T., & Anderson, J. (2014). ATK reaper: The ambisonic toolkit as JSFX plugins. Proceedings - 40th International Computer Music Conference, ICMC 2014 and 11th Sound and Music Computing Conference, SMC 2014 - Music Technology Meets Philosophy: From Digital Echos to Virtual Ethos, 1338–1345.
+
+[3]: Politis, A., Poirier-quinot, D., Politis, A., Jsambisonics, D. P., Audio, A. W., & Poirier-quinot, D. (2018). JSAmbisonics : A Web Audio library for interactive spatial sound processing on the web To cite this version : HAL Id : hal-01790246 JSAmbisonics : A Web Audio library for interactive spatial sound processing on the web.
+
+[4]: Nachbar, C., Zotter, F., Deleflie, E., & Sontacchi, A. (2011). Ambix - A Suggested Ambisonics Format. International Symposium on Ambisonics and Spherical Acoustics, 3, 1–11.
