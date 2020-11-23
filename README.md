@@ -100,11 +100,9 @@ When I edit, I barely touch the A-Format track apart from cutting, normalising o
 
 Some shortcuts that are useful:
 * Split: <kbd>s</kbd>
-* Split within time selection: <kbd>⇧S</kbd>
-* Cut within time selection: <kbd>⌃⇧X</kbd> / 
-<kbd>⌘⇧X</kbd>
-* Normalize: <kbd>⌃⇧N</kbd> / 
-<kbd>⌘⇧N</kbd> 
+* Split within time selection: <kbd>shift</kbd> + <kbd>S</kbd>
+* Cut within time selection: <kbd>ctrl</kbd>/<kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>⌃⇧X</kbd> / 
+* Normalize: <kbd>ctrl</kbd>/<kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>⌃⇧N</kbd> / 
 * Item properties: <kbd>F2</kbd> 
 
 ## The Ambisonic Master
@@ -141,9 +139,31 @@ The Visualzer is bypassed by default to save CPU power.
 ### B-Format encoding
 There are different encoding conventions for Ambisonics. These encoding conventions refere to the channel ordering of the B-Format signal and the normalization function applied to the signal. Both the SPARTA and IEM suite used the ACN ordering SN3D normalisation by default, which are standard when working with High Order Ambisonics [3]. C. Nachbar et al. offered a comparision between FUMA and ACN when they proposed the encoding format AmbiX [4].
 ## The G-Format decoding tracks
+These are the tracks that offer different decoding formats. 
 
+If you wish to use subwoofers with these decoders you need to make your own subwoofer buses. As the use and number of subwoofers depends on each scenario, I left this decision to the user.
 
+Most of the decoders use SPARTA AmbiDEC mostly because they offer the option to binauralise the loudspeakers and to select the amount of difussion and directionality per frequency band. However, IEM's AIIRA Decoder sounds really good to and it offeres a really clear interface to create custom loudspeaker configurations. 
 
+* Track 4 BtoG Binaural: Binaural decoder. By default it uses the SPARTA AmbiBIN. But Aalto's COMPASS binaural decoder and IEM's Binuaral decoder are also included. IEM's decoder includes different headphone equalisation, which it is useful for comparing different binaural mixes and exporting for a particular headphone scenario. 
+* Track 5 BtoG Stereo: IEM's Simple Decoder with a Mid-Side decoding configuration preset.
+* Track 6 BtoG 4.x 1Ord: 1st Order ambisonic decoder with a quadrophonic setup using SPARTA AmbiDEC.
+* Track 7 BtoG 5.x: Decoder for 5.x surround systems using SPARTA AmbiDEC. 
+* Track 8 BtoG 7.x: Decoder for 7.x surround systems using SPARTA AmbiDEC. 
+* Tracks 9-14 BtoG: These tracks offer decoding options for ambisonic orders 2-7 respectively. They all use Aalto's COMPASS Upmixer to create imaginary channels out of your 1st order recording. Each of them has a particular loudspeaker spherical configuration related to the ambisonic order. The COMPASS Upmixer is optional and you might want to bypass if you hear artifacts in the decoding. 
+
+### Rendering
+In order to render any of the decoding tracks, select the Ambisonic Master track by clicking on it and press <kbd>cmd</kbd>/<kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>R</kbd>. 
+
+On the window dialog, look at the top-left where it says <kbd>source:</kbd>. Select <kbd>Stems (selected tracks)</kbd>. 
+
+After that select the output directory for your project. 
+
+In the <kbd>Options</kbd> at the middle of the window, make sure that <kbd>Multichannel tracks to multichannels files</kbd> is checked. 
+
+Select WAV as the output format.
+
+Finally press <kbd>Render</kbd>
 ## References
 
 [1]: http://research.spa.aalto.fi/projects/sparta_vsts/
