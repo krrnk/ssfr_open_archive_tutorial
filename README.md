@@ -68,11 +68,11 @@ Download the reaper project as .zip from [here](https://github.com/krrnk/ssfr_op
 `git clone https://github.com/krrnk/ssfr_open_archive_tutorial.git`
 
 ### Loading
-Locate the project file on your computer and double click on it to open it.
+Locate the reaper project file .RPP on your computer and double click on it to open it.
 
 ### Navegation
 #### General view
-Once the project has loaded you should have a general vier like this:
+Once the project has loaded you should have a general view like this:
 
 ![picture alt](/img/reaper_session_no_file.png "Reaper General View")
 
