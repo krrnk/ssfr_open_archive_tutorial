@@ -74,7 +74,7 @@ Locate the project file on your computer and double click on it to open it.
 #### General view
 Once the project has loaded you should have a general vier like this:
 
-![picture alt](http://via.placeholder.com/200x150 "Reaper General View")
+![picture alt](/img/reaper_session_no_file.png "Reaper General View")
 
 #### Locating the plugins
 By default, Reaper looks for plug-ins in the general plug-in folder. 
