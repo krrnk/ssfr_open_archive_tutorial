@@ -6,9 +6,10 @@ This tutorial assumes that you have a basic knowledge of audio editing and you w
 
 ## Content
 1. DAW - Reaper 
-2. VST Plug-Ins
+2. Plug-Ins
     1. Aalto SPARTA
     2. IEM Ambisonic Plug-in Suite
+    3. Reaper's gfxanalyzer_4ch 
 3. Project file
     1. Download
     2. Loading
@@ -36,7 +37,7 @@ Although Reaper is not open-source, it offers a 60$ full-feature licence for ind
 
 Reaper works on macOs, Windows and Linux. You can download your system version [here](https://www.reaper.fm/download.php).
 
-## VST Plug-ins
+## Plug-ins
 There are different ambisonic plug-ins out there. However, I have found that the ones I get the best configurations and sound from are the Aalto SPARTA VST and the IEM Ambisonic Plug-in Suite. Both of them are open-source and offer support for macOs, Windows and Linux. 
 
 ### Aalto SPARTA
