@@ -61,20 +61,41 @@ Download your system version of IEM Plug-in Suite [here](https://plugins.iem.at/
 
 The IEM team has its own [installation guide](https://plugins.iem.at/docs/installation/) for Reaper.
 
-## Project file
-### Download
-Download the reaper project as .zip from [here](https://github.com/krrnk/ssfr_open_archive_tutorial/archive/main.zip) or by cloning this repository:
+### Reaper's gfxanalyzer_4ch
+Reaper has its own JSFX FFT Spectrum Analyzer. However, the default version is only 2ch. Since we are working with 1st order ambisonic recordings, we need a 4ch FFT Spectrum Analyzer. In this repository you can find Reaper's JSFX FFT Spectrum Analyzer with a little modification that allows for 4ch input. 
+
+**Download**
+
+Download the this repository as .zip from [here](https://github.com/krrnk/ssfr_open_archive_tutorial/archive/main.zip) or by cloning this repository:
 
 `git clone https://github.com/krrnk/ssfr_open_archive_tutorial.git`
 
+**Installation**
+Inside the downloaded repository, you will find the file "gfxanalyzer_4ch". Copy this file to the directory where Reaper locates its JS Plugin-ins. 
+
+1. Open Reaper.
+2. In the <kbd>Options</kbd> menu choose <kbd>Show REAPER resource path in explorer/finder</kbd>
+3. Locate the Effects directory in the file explorer.
+4. Inside /Effects/ you will see a folder called "analysis"
+5. Copy the file gfxanalyzer_4ch into the /analysis/ folder.
+
+Terminal alternative in macOS:
+
+`cp PATH_TO_PARENT_DIRECTORY/ssfr_open_archive_tutorial/gfxanalyzer_4ch ~/Library/Application\ Support/REAPER/Effects/analysis/`
+
+Where PATH_TO_PARENT_DIRECTORY is the path to the folder where this repository is located. For example ~/Downloads/   
+
+## Project file
 ### Loading
-Locate the reaper project file .RPP on your computer and double click on it to open it.
+Locate this repository on your computer. Open the folder and you will see the file "SSFR_Open_Archive_Ambisonic_Template_Editing.RPP".
+
+Double click on it to open it.
 
 ### Navegation
 #### General view
 Once the project has loaded you should have a general view like this:
 
-![picture alt](/img/reaper_session_no_file.png "Reaper General View")
+![picture alt](img/reaper_session_no_file.png "Reaper General View")
 
 #### Locating the plugins
 By default, Reaper looks for plug-ins in the general plug-in folder. 
