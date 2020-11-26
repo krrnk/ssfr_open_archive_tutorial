@@ -72,6 +72,7 @@ Download the this repository as .zip from [here](https://github.com/krrnk/ssfr_o
 `git clone https://github.com/krrnk/ssfr_open_archive_tutorial.git`
 
 **Installation**
+
 Inside the downloaded repository, you will find the file "gfxanalyzer_4ch". Copy this file to the directory where Reaper locates its JS Plugin-ins. 
 
 1. Open Reaper.
