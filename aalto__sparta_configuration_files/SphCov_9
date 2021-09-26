@@ -1,0 +1,81 @@
+{
+  "Name": "SPARTA AmbiENC source directions.",
+  "Description": "This configuration file was created with the SPARTA AmbiENC v1.3.8 plug-in. 26 Sep 2021 5:20:47pm",
+  "GenericLayout": {
+    "Name": "Source Directions",
+    "Elements": [
+      {
+        "Azimuth": -116.5224304199219,
+        "Elevation": 85.02120971679688,
+        "Radius": 1.0,
+        "IsImaginary": false,
+        "Channel": 1,
+        "Gain": 1.0
+      },
+      {
+        "Azimuth": 16.96585273742676,
+        "Elevation": 24.50941467285156,
+        "Radius": 1.0,
+        "IsImaginary": false,
+        "Channel": 2,
+        "Gain": 1.0
+      },
+      {
+        "Azimuth": -91.15185546875,
+        "Elevation": -50.42028427124023,
+        "Radius": 1.0,
+        "IsImaginary": false,
+        "Channel": 3,
+        "Gain": 1.0
+      },
+      {
+        "Azimuth": -132.8345336914062,
+        "Elevation": 8.344557762145996,
+        "Radius": 1.0,
+        "IsImaginary": false,
+        "Channel": 4,
+        "Gain": 1.0
+      },
+      {
+        "Azimuth": 149.1638336181641,
+        "Elevation": -47.7944221496582,
+        "Radius": 1.0,
+        "IsImaginary": false,
+        "Channel": 5,
+        "Gain": 1.0
+      },
+      {
+        "Azimuth": 86.70570373535156,
+        "Elevation": 6.335767269134521,
+        "Radius": 1.0,
+        "IsImaginary": false,
+        "Channel": 6,
+        "Gain": 1.0
+      },
+      {
+        "Azimuth": 156.5779113769531,
+        "Elevation": 20.84821510314941,
+        "Radius": 1.0,
+        "IsImaginary": false,
+        "Channel": 7,
+        "Gain": 1.0
+      },
+      {
+        "Azimuth": 22.01303863525391,
+        "Elevation": -44.3005256652832,
+        "Radius": 1.0,
+        "IsImaginary": false,
+        "Channel": 8,
+        "Gain": 1.0
+      },
+      {
+        "Azimuth": -54.69799041748047,
+        "Elevation": 10.80369186401367,
+        "Radius": 1.0,
+        "IsImaginary": false,
+        "Channel": 9,
+        "Gain": 1.0
+      }
+    ]
+  }
+}
